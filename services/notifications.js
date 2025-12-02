@@ -87,9 +87,9 @@ const formatTelegramMessage = (baseMsg, position) => {
 const formatTwitterMessage = (baseMsg, position) => {
     // 1. Strip HTML
     let twitterMsg = baseMsg.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ');
-    
-    // 2. Remove "View on Hypurrscan" text (we will add link manually)
-    twitterMsg = twitterMsg.replace('View on Hypurrscan', '');
+
+    // 2. Replace "View on Hypurrscan" with the actual Link
+    twitterMsg = twitterMsg.replace('View on Hypurrscan', position.hypurrscanUrl);
 
     // 3. Add "Hyperliquid." text
     twitterMsg += `\nHyperliquid.`;
@@ -97,8 +97,7 @@ const formatTwitterMessage = (baseMsg, position) => {
     // 4. Add Hashtags
     twitterMsg += `\n#${position.coin} #Whale #Hyperliquid`;
 
-    // 5. Add Link
-    twitterMsg += `\n🔗 ${position.hypurrscanUrl}`;
+    // 5. (Link already added above)
 
     // 6. Add Time (to prevent duplicate tweet errors)
     twitterMsg += `\n🕒 ${new Date().toLocaleTimeString()}`;

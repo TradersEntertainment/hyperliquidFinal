@@ -1,0 +1,744 @@
+{
+  "knownUsers": [
+    "0xbd8c75a0f55b5dc4df64297d6f67626e247d971d",
+    "0x023a3d058020fb76cca98f01b3c48c8938a22355",
+    "0xffbd3e51ae0e2c4407434e157965c064f2a11628",
+    "0xf517639a8872e756ac98d3c65507d2ebc25cc032",
+    "0xecb63caa47c7c4e77f60f1ce858cf28dc2b82b00",
+    "0xa5b0edf6b55128e0ddae8e51ac538c3188401d41",
+    "0x24fb6523036ebcb3cc51deff138066dccf6bed0f",
+    "0x34365f472a3af2ff8167970a519931437e2c2094",
+    "0xfc667adba8d4837586078f4fdcdc29804337ca06",
+    "0x7fe8cfe481ec2f702692a9152e3f002f3e417ac6",
+    "0x90924bd2a82c481170e98051196a5bde02d82b15",
+    "0x809ade7bb63a58190984058cf1ad251ba2e07803",
+    "0x38c080a03f48fd0e84ae80d8ae47d749ed6e3410",
+    "0x2c26b98bba32196e05123db5e1469ee88cb67e17",
+    "0x8ae4c5b303bc77c3aa68f2b71f37c9fa6d3b3d60",
+    "0x007d76eec0ba411ce873a8819df50dd443d967a0",
+    "0xc264fc52f546cec9f21f3bf9f076670bb51a9e9c",
+    "0xbf23af8a3dd05bb4f1b6bf19f006497027557bc5",
+    "0x50664ede715e131f584d3e7eaabd7818bb20a068",
+    "0x0c0b11fa0e2d2451e764cf009af44eb5784b9d24",
+    "0xc6ac58a7a63339898aeda32499a8238a46d88e84",
+    "0x931153baac031d055389b41d12cd32c9bf0ae7a3",
+    "0x9cb0a2459ea92d0466be0e1878fe99858d957a94",
+    "0xefffa330cbae8d916ad1d33f0eeb16cfa711fa91",
+    "0xfb6678f8bb51215606b01ca1162afa005b28e4c2",
+    "0x549e6dd8453ed87fccdcf4f8b37162b10edc0533",
+    "0xa43d75213160aff6db3b9761dd5ac4fb4fa57d28",
+    "0x4044570e13b5184f7eb2709de25a4eb766a4794c",
+    "0x8aae8a240f0c97cb542c7b199ef14f9cc6352503",
+    "0x45ab58a2034f03aa446baf3bb1d236706f866cbc",
+    "0xace0a4c087f7f199328fb1e38d8d27bd237b03fd",
+    "0xaded86bf6e6fd72f78dca132af112fa36230809e",
+    "0x6a572bb9d31ff710f882f33c21d8ba11a169a887",
+    "0x4321bfc3b43d538bc2b6dfbcf22a367719aea936",
+    "0x152e41f0b83e6cad4b5dc730c1d6279b7d67c9dc",
+    "0xd911e53d53b663972254e086450fd6198a25961e",
+    "0xb8eb97eaed8367079894d2f1bed69bd220ec1dd5",
+    "0x795cfd1b03eafc11c4ec958b8a94cfc9aa64a242",
+    "0xb885ed57cd16985f347d26f13a79dc4abd2e3c54",
+    "0x50976e025defef328d11b367aebc018b01da6275",
+    "0x0748e296e5a350ec36c8487a1cea406e1b57d4b2",
+    "0x4a96036fb1529561fa3eeeb2781fad2d4f25500e"
+  ],
+  "knownPositions": [
+    [
+      "0xbd8c75a0f55b5dc4df64297d6f67626e247d971d-HYPE",
+      1764598599401
+    ],
+    [
+      "0x023a3d058020fb76cca98f01b3c48c8938a22355-BTC",
+      1764598719937
+    ],
+    [
+      "0x023a3d058020fb76cca98f01b3c48c8938a22355-HYPE",
+      1764598721401
+    ],
+    [
+      "0x023a3d058020fb76cca98f01b3c48c8938a22355-FARTCOIN",
+      1764598722834
+    ],
+    [
+      "0x023a3d058020fb76cca98f01b3c48c8938a22355-ASTER",
+      1764598724269
+    ],
+    [
+      "0x023a3d058020fb76cca98f01b3c48c8938a22355-ZEC",
+      1764598725722
+    ],
+    [
+      "0xffbd3e51ae0e2c4407434e157965c064f2a11628-BTC",
+      1764599001041
+    ],
+    [
+      "0xf517639a8872e756ac98d3c65507d2ebc25cc032-HYPE",
+      1764599001661
+    ],
+    [
+      "0xecb63caa47c7c4e77f60f1ce858cf28dc2b82b00-BTC",
+      1764599001741
+    ],
+    [
+      "0xffbd3e51ae0e2c4407434e157965c064f2a11628-ENA",
+      1764599002463
+    ],
+    [
+      "0xecb63caa47c7c4e77f60f1ce858cf28dc2b82b00-ETH",
+      1764599003458
+    ],
+    [
+      "0xecb63caa47c7c4e77f60f1ce858cf28dc2b82b00-SOL",
+      1764599004873
+    ],
+    [
+      "0xecb63caa47c7c4e77f60f1ce858cf28dc2b82b00-XRP",
+      1764599006467
+    ],
+    [
+      "0xecb63caa47c7c4e77f60f1ce858cf28dc2b82b00-HYPE",
+      1764599007899
+    ],
+    [
+      "0xa5b0edf6b55128e0ddae8e51ac538c3188401d41-ETH",
+      1764599530432
+    ],
+    [
+      "0xf517639a8872e756ac98d3c65507d2ebc25cc032-BTC",
+      1764599651296
+    ],
+    [
+      "0x24fb6523036ebcb3cc51deff138066dccf6bed0f-BTC",
+      1764600322651
+    ],
+    [
+      "0x34365f472a3af2ff8167970a519931437e2c2094-BTC",
+      1764602346439
+    ],
+    [
+      "0xfc667adba8d4837586078f4fdcdc29804337ca06-ETH",
+      1764602712990
+    ],
+    [
+      "0xfc667adba8d4837586078f4fdcdc29804337ca06-SOL",
+      1764602713998
+    ],
+    [
+      "0x7fe8cfe481ec2f702692a9152e3f002f3e417ac6-HYPE",
+      1764602719671
+    ],
+    [
+      "0x90924bd2a82c481170e98051196a5bde02d82b15-BTC",
+      1764602988186
+    ],
+    [
+      "0x809ade7bb63a58190984058cf1ad251ba2e07803-BTC",
+      1764603124718
+    ],
+    [
+      "0x38c080a03f48fd0e84ae80d8ae47d749ed6e3410-ETH",
+      1764603217193
+    ],
+    [
+      "0x2c26b98bba32196e05123db5e1469ee88cb67e17-BTC",
+      1764603276789
+    ],
+    [
+      "0x8ae4c5b303bc77c3aa68f2b71f37c9fa6d3b3d60-FARTCOIN",
+      1764603386610
+    ],
+    [
+      "0x007d76eec0ba411ce873a8819df50dd443d967a0-HYPE",
+      1764604133369
+    ],
+    [
+      "0x007d76eec0ba411ce873a8819df50dd443d967a0-BTC",
+      1764604157037
+    ],
+    [
+      "0xc264fc52f546cec9f21f3bf9f076670bb51a9e9c-BTC",
+      1764604230558
+    ],
+    [
+      "0xbf23af8a3dd05bb4f1b6bf19f006497027557bc5-BTC",
+      1764606289532
+    ],
+    [
+      "0x90924bd2a82c481170e98051196a5bde02d82b15-HYPE",
+      1764607241453
+    ],
+    [
+      "0x50664ede715e131f584d3e7eaabd7818bb20a068-HYPE",
+      1764607744258
+    ],
+    [
+      "0x0c0b11fa0e2d2451e764cf009af44eb5784b9d24-BTC",
+      1764607958023
+    ],
+    [
+      "0xc6ac58a7a63339898aeda32499a8238a46d88e84-BTC",
+      1764608125185
+    ],
+    [
+      "0x931153baac031d055389b41d12cd32c9bf0ae7a3-ASTER",
+      1764609022637
+    ],
+    [
+      "0x9cb0a2459ea92d0466be0e1878fe99858d957a94-BTC",
+      1764612794983
+    ],
+    [
+      "0xefffa330cbae8d916ad1d33f0eeb16cfa711fa91-HYPE",
+      1764614438472
+    ],
+    [
+      "0xfb6678f8bb51215606b01ca1162afa005b28e4c2-BTC",
+      1764614656959
+    ],
+    [
+      "0x549e6dd8453ed87fccdcf4f8b37162b10edc0533-HYPE",
+      1764615470052
+    ],
+    [
+      "0xa43d75213160aff6db3b9761dd5ac4fb4fa57d28-ETH",
+      1764616502670
+    ],
+    [
+      "0x4044570e13b5184f7eb2709de25a4eb766a4794c-BTC",
+      1764616882248
+    ],
+    [
+      "0x8aae8a240f0c97cb542c7b199ef14f9cc6352503-BTC",
+      1764621523140
+    ],
+    [
+      "0x45ab58a2034f03aa446baf3bb1d236706f866cbc-PUMP",
+      1764621572398
+    ],
+    [
+      "0xace0a4c087f7f199328fb1e38d8d27bd237b03fd-ETH",
+      1764622813484
+    ],
+    [
+      "0xaded86bf6e6fd72f78dca132af112fa36230809e-BTC",
+      1764624047614
+    ],
+    [
+      "0x6a572bb9d31ff710f882f33c21d8ba11a169a887-BTC",
+      1764624915739
+    ],
+    [
+      "0x4321bfc3b43d538bc2b6dfbcf22a367719aea936-BTC",
+      1764625105511
+    ],
+    [
+      "0x152e41f0b83e6cad4b5dc730c1d6279b7d67c9dc-BTC",
+      1764626473197
+    ],
+    [
+      "0xecb63caa47c7c4e77f60f1ce858cf28dc2b82b00-XPL",
+      1764626558467
+    ],
+    [
+      "0x152e41f0b83e6cad4b5dc730c1d6279b7d67c9dc-ETH",
+      1764626724396
+    ],
+    [
+      "0xd911e53d53b663972254e086450fd6198a25961e-ETH",
+      1764627115511
+    ],
+    [
+      "0xb8eb97eaed8367079894d2f1bed69bd220ec1dd5-ETH",
+      1764627220150
+    ],
+    [
+      "0x795cfd1b03eafc11c4ec958b8a94cfc9aa64a242-HYPE",
+      1764628049312
+    ],
+    [
+      "0x795cfd1b03eafc11c4ec958b8a94cfc9aa64a242-ZEC",
+      1764628050798
+    ],
+    [
+      "0xb885ed57cd16985f347d26f13a79dc4abd2e3c54-HYPE",
+      1764631730422
+    ],
+    [
+      "0x50976e025defef328d11b367aebc018b01da6275-BTC",
+      1764632129914
+    ],
+    [
+      "0x0748e296e5a350ec36c8487a1cea406e1b57d4b2-HYPE",
+      1764634301628
+    ],
+    [
+      "0x4a96036fb1529561fa3eeeb2781fad2d4f25500e-HYPE",
+      1764634376193
+    ],
+    [
+      "0x152e41f0b83e6cad4b5dc730c1d6279b7d67c9dc-ZEC",
+      1764640036016
+    ]
+  ],
+  "trackedPositions": [
+    {
+      "user": "",
+      "coin": "BTC",
+      "direction": "SHORT",
+      "positionSize": 60.39706,
+      "positionUSD": 5239263.76382,
+      "entryPrice": 86445.7,
+      "markPrice": 86747,
+      "liqPrice": 88013.5999604396,
+      "distanceToLiq": 0.014601080849362003,
+      "distancePercent": "1.46",
+      "leverage": 40,
+      "unrealizedPnl": -18195.4959,
+      "accountEquity": 0,
+      "hypurrscanUrl": "https://hypurrscan.io/address/",
+      "hyperliquidUrl": "https://app.hyperliquid.xyz/explorer/address/",
+      "userShort": "0xa5b6...5c35",
+      "dangerLevel": "CRITICAL",
+      "timestamp": 1764626994051,
+      "isRecurring": true
+    },
+    {
+      "user": "",
+      "coin": "BTC",
+      "direction": "SHORT",
+      "positionSize": 150.92964,
+      "positionUSD": 13069601.24616,
+      "entryPrice": 86576.9,
+      "markPrice": 86594,
+      "liqPrice": 88376.652093656,
+      "distanceToLiq": 0.02058632345954682,
+      "distancePercent": "2.06",
+      "leverage": 30,
+      "unrealizedPnl": -2571.33726,
+      "accountEquity": 0,
+      "hypurrscanUrl": "https://hypurrscan.io/address/",
+      "hyperliquidUrl": "https://app.hyperliquid.xyz/explorer/address/",
+      "userShort": "0x5097...6275",
+      "timestamp": 1764632157279,
+      "isFreshWallet": true,
+      "walletAgeDays": 0,
+      "isHypervaultAttack": false,
+      "type": "NEW"
+    },
+    {
+      "user": "",
+      "coin": "BTC",
+      "direction": "SHORT",
+      "positionSize": 30,
+      "positionUSD": 2596950,
+      "entryPrice": 86747.5,
+      "markPrice": 86565,
+      "liqPrice": 87776.7859281317,
+      "distanceToLiq": 0.013998566720172205,
+      "distancePercent": "1.40",
+      "leverage": 40,
+      "unrealizedPnl": 5475.62333,
+      "accountEquity": 0,
+      "hypurrscanUrl": "https://hypurrscan.io/address/",
+      "hyperliquidUrl": "https://app.hyperliquid.xyz/explorer/address/",
+      "userShort": "0xb568...a27a",
+      "dangerLevel": "CRITICAL",
+      "timestamp": 1764638515777,
+      "isRecurring": true
+    },
+    {
+      "user": "",
+      "coin": "BTC",
+      "direction": "LONG",
+      "positionSize": 40,
+      "positionUSD": 3455040,
+      "entryPrice": 86469.9,
+      "markPrice": 86376,
+      "liqPrice": 85030.8418606835,
+      "distanceToLiq": 0.01557328585853126,
+      "distancePercent": "1.56",
+      "leverage": 40,
+      "unrealizedPnl": -3757.85452,
+      "accountEquity": 0,
+      "hypurrscanUrl": "https://hypurrscan.io/address/",
+      "hyperliquidUrl": "https://app.hyperliquid.xyz/explorer/address/",
+      "userShort": "0x5bf8...062b",
+      "dangerLevel": "CRITICAL",
+      "timestamp": 1764640317648,
+      "isRecurring": false
+    }
+  ],
+  "sentAlerts": [
+    [
+      "DANGER-0x7079b5814032c0b02425135f06f32a0084cdf2d2-BTC",
+      {
+        "timestamp": 1764599839406,
+        "lastDistance": 1.66
+      }
+    ],
+    [
+      "DANGER-0x43e3b71f833bc41d2cc60505ebfe7a019eb86b21-BTC",
+      {
+        "timestamp": 1764599849494,
+        "lastDistance": 0.6
+      }
+    ],
+    [
+      "DANGER-0xb8e055fa670dcece733fabb326f278998eebfc61-BTC",
+      {
+        "timestamp": 1764603032381,
+        "lastDistance": 0.3
+      }
+    ],
+    [
+      "DANGER-0x020ca66c30bec2c4fe3861a94e4db4a498a35872-ETH",
+      {
+        "timestamp": 1764602166639,
+        "lastDistance": 0.42
+      }
+    ],
+    [
+      "DANGER-0x535e34b5ada64997afc88444271ae9b3f82b3867-ETH",
+      {
+        "timestamp": 1764602735053,
+        "lastDistance": 0.93
+      }
+    ],
+    [
+      "DANGER-0x809ade7bb63a58190984058cf1ad251ba2e07803-BTC",
+      {
+        "timestamp": 1764603121311,
+        "lastDistance": 1.23
+      }
+    ],
+    [
+      "DANGER-0xf517639a8872e756ac98d3c65507d2ebc25cc032-BTC",
+      {
+        "timestamp": 1764603130553,
+        "lastDistance": 1.71
+      }
+    ],
+    [
+      "DANGER-0xb1ec7febea4f841d525785955b7fe0e812d6e86a-ETH",
+      {
+        "timestamp": 1764603245546,
+        "lastDistance": 2
+      }
+    ],
+    [
+      "DANGER-0x2c26b98bba32196e05123db5e1469ee88cb67e17-BTC",
+      {
+        "timestamp": 1764620901171,
+        "lastDistance": 1.18
+      }
+    ],
+    [
+      "DANGER-0x34365f472a3af2ff8167970a519931437e2c2094-BTC",
+      {
+        "timestamp": 1764603699739,
+        "lastDistance": 1.93
+      }
+    ],
+    [
+      "DANGER-0xa5b662f5cc0bf744626aff5f260e541f94265c35-BTC",
+      {
+        "timestamp": 1764626513547,
+        "lastDistance": 1.79
+      }
+    ],
+    [
+      "DANGER-0x788b4d71f694e7e7c30d7a70e0a22bcffefe3a4a-BTC",
+      {
+        "timestamp": 1764603788545,
+        "lastDistance": 1.72
+      }
+    ],
+    [
+      "DANGER-0x149277a32f92dcc0c362be7429be83d63e677571-BTC",
+      {
+        "timestamp": 1764623907315,
+        "lastDistance": 1.38
+      }
+    ],
+    [
+      "DANGER-0xb568c358a5c7424875d907610af2eb936823a27a-BTC",
+      {
+        "timestamp": 1764638498923,
+        "lastDistance": 1.38
+      }
+    ],
+    [
+      "DANGER-0x535e34b5ada64997afc88444271ae9b3f82b3867-BTC",
+      {
+        "timestamp": 1764604027952,
+        "lastDistance": 1.28
+      }
+    ],
+    [
+      "DANGER-0xc264fc52f546cec9f21f3bf9f076670bb51a9e9c-BTC",
+      {
+        "timestamp": 1764604227493,
+        "lastDistance": 1.53
+      }
+    ],
+    [
+      "DANGER-0x3b05be23f2f224f6dc6229bd0aa59e3151c25694-BTC",
+      {
+        "timestamp": 1764621063160,
+        "lastDistance": 1.69
+      }
+    ],
+    [
+      "DANGER-0x5bf8068463fbe07bd2d4f73721e28f0a78d9062b-ETH",
+      {
+        "timestamp": 1764610131763,
+        "lastDistance": 1.97
+      }
+    ],
+    [
+      "DANGER-0xbc93885218bdb63b2e2cca223ade5ca79d8194f0-BTC",
+      {
+        "timestamp": 1764624568963,
+        "lastDistance": 1.8
+      }
+    ],
+    [
+      "DANGER-0x5bf8068463fbe07bd2d4f73721e28f0a78d9062b-BTC",
+      {
+        "timestamp": 1764640282405,
+        "lastDistance": 1.58
+      }
+    ]
+  ],
+  "sentNotifications": [
+    {
+      "type": "DANGER",
+      "message": "⚠️ <b>BTC LONG</b> 💀\n━━━━━━━━━━━━━━━━\n👑 <b>Whale</b>: <code>0x5bf8...062b</code>\n💎 <b>Size</b>: $3.46M\n⚡ <b>Leverage</b>: 40x\n💰 <b>uPnL</b>: 🩸 $-2797.85 \n🏦 <b>Equity</b>: $97.3K\n📊 <b>Entry</b>: 86469.9\n💀 <b>Liquidation</b>: 85030.8418606835\n🎯 <b>Distance to Liq</b>: 1.58%\n🔗 <a href=\"https://hypurrscan.io/address/0x5bf8068463fbe07bd2d4f73721e28f0a78d9062b\">View on Hypurrscan</a>",
+      "timestamp": 1764640282663
+    },
+    {
+      "type": "DANGER",
+      "message": "📉 <b>RISK INCREASING FOR $2.60M BTC SHORT</b> (1.38% to liq) 💀\n━━━━━━━━━━━━━━━━\n👑 <b>Whale</b>: <code>0xb568...a27a</code>\n💎 <b>Size</b>: $2.60M\n⚡ <b>Leverage</b>: 40x\n💰 <b>uPnL</b>: 🤑 $5.1K \n🏦 <b>Equity</b>: $500.0K\n📊 <b>Entry</b>: 86747.5\n💀 <b>Liquidation</b>: 87776.7859281317\n🎯 <b>Distance to Liq</b>: 1.38%\n🔗 <a href=\"https://hypurrscan.io/address/0xb568c358a5c7424875d907610af2eb936823a27a\">View on Hypurrscan</a>",
+      "timestamp": 1764638499152
+    },
+    {
+      "type": "NEW",
+      "message": "🔥 <b>HIGH RISK WHALE ENTRY</b> 🔥\n🔴 <b>BTC SHORT</b> 🔴\n━━━━━━━━━━━━━━━━\n👑 <b>Whale</b>: <code>0x5097...6275</code>\n📅 <b>Age</b>: 0 days (Fresh 🥬)\n💎 <b>Size</b>: $13.06M\n⚡ <b>Leverage</b>: 30x\n🏦 <b>Equity</b>: $511.7K\n📊 <b>Entry</b>: 86576.9\n🎯 <b>Distance to Liq</b>: 2.10%\n🔗 <a href=\"https://hypurrscan.io/address/0x50976e025defef328d11b367aebc018b01da6275\">View on Hypurrscan</a>",
+      "timestamp": 1764632130188
+    },
+    {
+      "type": "NEW",
+      "message": "🐋 <b>WHALE OPENED BTC LONG</b> 🐋\n🟢 <b>BTC LONG</b> 🟢\n━━━━━━━━━━━━━━━━\n👑 <b>Whale</b>: <code>0x152e...c9dc</code>\n📅 <b>Age</b>: 3 days (Fresh 🥬)\n💎 <b>Size</b>: $11.49M\n⚡ <b>Leverage</b>: 20x\n🏦 <b>Equity</b>: $16.47M\n📊 <b>Entry</b>: 86440\n🎯 <b>Distance to Liq</b>: N/A%\n🔗 <a href=\"https://hypurrscan.io/address/0x152e41f0b83e6cad4b5dc730c1d6279b7d67c9dc\">View on Hypurrscan</a>\n#NewWhale #Hyperliquid #BTC",
+      "timestamp": 1764626473464
+    },
+    {
+      "type": "NEW",
+      "message": "🔥 <b>HIGH RISK WHALE ENTRY</b> 🔥\n🟢 <b>BTC LONG</b> 🟢\n━━━━━━━━━━━━━━━━\n👑 <b>Whale</b>: <code>0xbf23...7bc5</code>\n📅 <b>Age</b>: 4 days (Fresh 🥬)\n💎 <b>Size</b>: $11.85M\n⚡ <b>Leverage</b>: 40x\n🏦 <b>Equity</b>: $596.8K\n📊 <b>Entry</b>: 84237.2\n🎯 <b>Distance to Liq</b>: 3.83%\n🔗 <a href=\"https://hypurrscan.io/address/0xbf23af8a3dd05bb4f1b6bf19f006497027557bc5\">View on Hypurrscan</a>\n#NewWhale #Hyperliquid #BTC",
+      "timestamp": 1764606289883
+    },
+    {
+      "type": "NEW",
+      "message": "🔥 <b>HIGH RISK WHALE ENTRY</b> 🔥\n🟢 <b>BTC LONG</b> 🟢\n━━━━━━━━━━━━━━━━\n👑 <b>Whale</b>: <code>0xc264...9e9c</code>\n📅 <b>Age</b>: 0 days (Fresh 🥬)\n💎 <b>Size</b>: $16.91M\n⚡ <b>Leverage</b>: 40x\n🏦 <b>Equity</b>: $469.7K\n📊 <b>Entry</b>: 84534.8\n🎯 <b>Distance to Liq</b>: 1.55%\n🔗 <a href=\"https://hypurrscan.io/address/0xc264fc52f546cec9f21f3bf9f076670bb51a9e9c\">View on Hypurrscan</a>\n#NewWhale #Hyperliquid #BTC",
+      "timestamp": 1764604230058
+    },
+    {
+      "type": "NEW",
+      "message": "🐋 <b>WHALE OPENED FARTCOIN LONG</b> 🐋\n🟢 <b>FARTCOIN LONG</b> 🟢\n━━━━━━━━━━━━━━━━\n👑 <b>Whale</b>: <code>0x8ae4...3d60</code>\n📅 <b>Age</b>: 2 days (Fresh 🥬)\n💎 <b>Size</b>: $4.85M\n⚡ <b>Leverage</b>: 5x\n🏦 <b>Equity</b>: $7.26M\n📊 <b>Entry</b>: 0.30197\n🎯 <b>Distance to Liq</b>: N/A%\n🔗 <a href=\"https://hypurrscan.io/address/0x8ae4c5b303bc77c3aa68f2b71f37c9fa6d3b3d60\">View on Hypurrscan</a>\n#NewWhale #Hyperliquid #FARTCOIN",
+      "timestamp": 1764603386774
+    },
+    {
+      "type": "NEW",
+      "message": "🔥 <b>HIGH RISK WHALE ENTRY</b> 🔥\n🔴 <b>BTC SHORT</b> 🔴\n━━━━━━━━━━━━━━━━\n👑 <b>Whale</b>: <code>0x809a...7803</code>\n📅 <b>Age</b>: 4 days (Fresh 🥬)\n💎 <b>Size</b>: $10.82M\n⚡ <b>Leverage</b>: 40x\n🏦 <b>Equity</b>: $274.8K\n📊 <b>Entry</b>: 84779.6\n🎯 <b>Distance to Liq</b>: 1.23%\n🔗 <a href=\"https://hypurrscan.io/address/0x809ade7bb63a58190984058cf1ad251ba2e07803\">View on Hypurrscan</a>\n#NewWhale #Hyperliquid #BTC",
+      "timestamp": 1764603124890
+    },
+    {
+      "type": "NEW",
+      "message": "🔥 <b>HIGH RISK WHALE ENTRY</b> 🔥\n🔴 <b>BTC SHORT</b> 🔴\n━━━━━━━━━━━━━━━━\n👑 <b>Whale</b>: <code>0x3436...2094</code>\n📅 <b>Age</b>: 0 days (Fresh 🥬)\n💎 <b>Size</b>: $10.32M\n⚡ <b>Leverage</b>: 40x\n🏦 <b>Equity</b>: $664.7K\n📊 <b>Entry</b>: 85974.8\n🎯 <b>Distance to Liq</b>: 4.80%\n🔗 <a href=\"https://hypurrscan.io/address/0x34365f472a3af2ff8167970a519931437e2c2094\">View on Hypurrscan</a>\n#NewWhale #Hyperliquid #BTC",
+      "timestamp": 1764602346606
+    },
+    {
+      "type": "NEW",
+      "message": "🐋 <b>WHALE OPENED BTC LONG</b> 🐋\n🟢 <b>BTC LONG</b> 🟢\n━━━━━━━━━━━━━━━━\n👑 <b>Whale</b>: <code>0xecb6...2b00</code>\n📅 <b>Age</b>: 0 days (Fresh 🥬)\n💎 <b>Size</b>: $10.13M\n⚡ <b>Leverage</b>: 20x\n🏦 <b>Equity</b>: $33.68M\n📊 <b>Entry</b>: 85453\n🎯 <b>Distance to Liq</b>: N/A%\n🔗 <a href=\"https://hypurrscan.io/address/0xecb63caa47c7c4e77f60f1ce858cf28dc2b82b00\">View on Hypurrscan</a>\n#NewWhale #Hyperliquid #BTC",
+      "timestamp": 1764599002020
+    }
+  ],
+  "recentNewPositions": [
+    {
+      "user": "0x50976e025defef328d11b367aebc018b01da6275",
+      "coin": "BTC",
+      "direction": "SHORT",
+      "positionSize": 150.92964,
+      "positionUSD": 13063865.91984,
+      "entryPrice": 86576.9,
+      "markPrice": 86556,
+      "liqPrice": 88376.652093656,
+      "distanceToLiq": 0.02103438344720178,
+      "distancePercent": "2.10",
+      "leverage": 30,
+      "unrealizedPnl": 3163.98906,
+      "accountEquity": 511729.951966,
+      "hypurrscanUrl": "https://hypurrscan.io/address/0x50976e025defef328d11b367aebc018b01da6275",
+      "hyperliquidUrl": "https://app.hyperliquid.xyz/explorer/address/0x50976e025defef328d11b367aebc018b01da6275",
+      "userShort": "0x5097...6275",
+      "timestamp": 1764632129914,
+      "isFreshWallet": true,
+      "walletAgeDays": 0,
+      "isHypervaultAttack": false
+    },
+    {
+      "user": "0x152e41f0b83e6cad4b5dc730c1d6279b7d67c9dc",
+      "coin": "BTC",
+      "direction": "LONG",
+      "positionSize": 132.87511,
+      "positionUSD": 11492368.2639,
+      "entryPrice": 86440,
+      "markPrice": 86490,
+      "liqPrice": null,
+      "distanceToLiq": null,
+      "distancePercent": "N/A",
+      "leverage": 20,
+      "unrealizedPnl": 6636.44765,
+      "accountEquity": 16468778.162595,
+      "hypurrscanUrl": "https://hypurrscan.io/address/0x152e41f0b83e6cad4b5dc730c1d6279b7d67c9dc",
+      "hyperliquidUrl": "https://app.hyperliquid.xyz/explorer/address/0x152e41f0b83e6cad4b5dc730c1d6279b7d67c9dc",
+      "userShort": "0x152e...c9dc",
+      "timestamp": 1764626473197,
+      "isFreshWallet": true,
+      "walletAgeDays": 3,
+      "isHypervaultAttack": false
+    },
+    {
+      "user": "0xbf23af8a3dd05bb4f1b6bf19f006497027557bc5",
+      "coin": "BTC",
+      "direction": "LONG",
+      "positionSize": 140.7574,
+      "positionUSD": 11852054.5948,
+      "entryPrice": 84237.2,
+      "markPrice": 84202,
+      "liqPrice": 80974.435668473,
+      "distanceToLiq": 0.038331207471639615,
+      "distancePercent": "3.83",
+      "leverage": 40,
+      "unrealizedPnl": -4960.23111,
+      "accountEquity": 596775.451528,
+      "hypurrscanUrl": "https://hypurrscan.io/address/0xbf23af8a3dd05bb4f1b6bf19f006497027557bc5",
+      "hyperliquidUrl": "https://app.hyperliquid.xyz/explorer/address/0xbf23af8a3dd05bb4f1b6bf19f006497027557bc5",
+      "userShort": "0xbf23...7bc5",
+      "timestamp": 1764606289532,
+      "isFreshWallet": true,
+      "walletAgeDays": 4,
+      "isHypervaultAttack": false
+    },
+    {
+      "user": "0xc264fc52f546cec9f21f3bf9f076670bb51a9e9c",
+      "coin": "BTC",
+      "direction": "LONG",
+      "positionSize": 200,
+      "positionUSD": 16907200,
+      "entryPrice": 84534.8,
+      "markPrice": 84536,
+      "liqPrice": 83227.6174436911,
+      "distanceToLiq": 0.015477223387774497,
+      "distancePercent": "1.55",
+      "leverage": 40,
+      "unrealizedPnl": 235.73321,
+      "accountEquity": 469745.554871,
+      "hypurrscanUrl": "https://hypurrscan.io/address/0xc264fc52f546cec9f21f3bf9f076670bb51a9e9c",
+      "hyperliquidUrl": "https://app.hyperliquid.xyz/explorer/address/0xc264fc52f546cec9f21f3bf9f076670bb51a9e9c",
+      "userShort": "0xc264...9e9c",
+      "timestamp": 1764604229834,
+      "isFreshWallet": true,
+      "walletAgeDays": 0,
+      "isHypervaultAttack": false
+    },
+    {
+      "user": "0x8ae4c5b303bc77c3aa68f2b71f37c9fa6d3b3d60",
+      "coin": "FARTCOIN",
+      "direction": "LONG",
+      "positionSize": 16289236.1,
+      "positionUSD": 4852889.218912,
+      "entryPrice": 0.30197,
+      "markPrice": 0.29792,
+      "liqPrice": null,
+      "distanceToLiq": null,
+      "distancePercent": "N/A",
+      "leverage": 5,
+      "unrealizedPnl": -66073.123856,
+      "accountEquity": 7264364.593019,
+      "hypurrscanUrl": "https://hypurrscan.io/address/0x8ae4c5b303bc77c3aa68f2b71f37c9fa6d3b3d60",
+      "hyperliquidUrl": "https://app.hyperliquid.xyz/explorer/address/0x8ae4c5b303bc77c3aa68f2b71f37c9fa6d3b3d60",
+      "userShort": "0x8ae4...3d60",
+      "timestamp": 1764603386610,
+      "isFreshWallet": true,
+      "walletAgeDays": 2,
+      "isHypervaultAttack": false
+    },
+    {
+      "user": "0x809ade7bb63a58190984058cf1ad251ba2e07803",
+      "coin": "BTC",
+      "direction": "SHORT",
+      "positionSize": 127.55138,
+      "positionUSD": 10818780.500219999,
+      "entryPrice": 84779.6,
+      "markPrice": 84819,
+      "liqPrice": 85864.8120450029,
+      "distanceToLiq": 0.012329926608459128,
+      "distancePercent": "1.23",
+      "leverage": 40,
+      "unrealizedPnl": -551.1736,
+      "accountEquity": 274761.258733,
+      "hypurrscanUrl": "https://hypurrscan.io/address/0x809ade7bb63a58190984058cf1ad251ba2e07803",
+      "hyperliquidUrl": "https://app.hyperliquid.xyz/explorer/address/0x809ade7bb63a58190984058cf1ad251ba2e07803",
+      "userShort": "0x809a...7803",
+      "timestamp": 1764603124718,
+      "isFreshWallet": true,
+      "walletAgeDays": 4,
+      "isHypervaultAttack": false
+    },
+    {
+      "user": "0x34365f472a3af2ff8167970a519931437e2c2094",
+      "coin": "BTC",
+      "direction": "SHORT",
+      "positionSize": 120.57135,
+      "positionUSD": 10315361.2779,
+      "entryPrice": 85974.8,
+      "markPrice": 85554,
+      "liqPrice": 89657.4559680438,
+      "distanceToLiq": 0.0479633444145662,
+      "distancePercent": "4.80",
+      "leverage": 40,
+      "unrealizedPnl": 50738.682255,
+      "accountEquity": 664662.441297,
+      "hypurrscanUrl": "https://hypurrscan.io/address/0x34365f472a3af2ff8167970a519931437e2c2094",
+      "hyperliquidUrl": "https://app.hyperliquid.xyz/explorer/address/0x34365f472a3af2ff8167970a519931437e2c2094",
+      "userShort": "0x3436...2094",
+      "timestamp": 1764602346439,
+      "isFreshWallet": true,
+      "walletAgeDays": 0,
+      "isHypervaultAttack": false
+    },
+    {
+      "user": "0xecb63caa47c7c4e77f60f1ce858cf28dc2b82b00",
+      "coin": "BTC",
+      "direction": "LONG",
+      "positionSize": 117.65794,
+      "positionUSD": 10130701.60782,
+      "entryPrice": 85453,
+      "markPrice": 86103,
+      "liqPrice": null,
+      "distanceToLiq": null,
+      "distancePercent": "N/A",
+      "leverage": 20,
+      "unrealizedPnl": 76006.448572,
+      "accountEquity": 33683396.075717,
+      "hypurrscanUrl": "https://hypurrscan.io/address/0xecb63caa47c7c4e77f60f1ce858cf28dc2b82b00",
+      "hyperliquidUrl": "https://app.hyperliquid.xyz/explorer/address/0xecb63caa47c7c4e77f60f1ce858cf28dc2b82b00",
+      "userShort": "0xecb6...2b00",
+      "timestamp": 1764599001741,
+      "isFreshWallet": true,
+      "walletAgeDays": 0,
+      "isHypervaultAttack": false
+    }
+  ]
+}

@@ -143,7 +143,9 @@ ${title}
 
     // Twitter
     // Only Tweet if VERY urgent (< 10% distance) or Significant PnL (Bag Holder/Smart Whale)
-    if (position.distancePercent < 10 || pnlTag) {
+    // UPDATE: User requested to remove initial "Danger" alerts from Twitter to save rate limits.
+    // We only send if it is RECURRING (Risk Increasing) or has a PnL Tag (Smart Whale/Bag Holder).
+    if (position.isRecurring || pnlTag) {
         const twitterMsg = formatTwitterMessage(msg, position);
         await sendTwitterTweet(twitterMsg);
     }

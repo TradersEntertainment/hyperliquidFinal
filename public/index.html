@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperliquid Liquidation Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hyperliquid Tracker 🐋</h1>
+            <div id="stats-bar" class="stats-bar">
+                <div class="stat-item">
+                    <span class="label">Critical</span>
+                    <span class="value critical" id="stat-critical">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="label">Warning</span>
+                    <span class="value warning" id="stat-warning">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="label">New Positions</span>
+                    <span class="value" id="stat-new">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="label">System Status</span>
+                    <span class="value" id="stat-status">Active</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="grid">
+            <!-- Danger Zone -->
+            <section class="panel danger-panel">
+                <h2>⚠️ Longs at Risk</h2>
+                <div id="longs-list" class="list-container"></div>
+            </section>
+
+            <section class="panel danger-panel">
+                <h2>⚠️ Shorts at Risk</h2>
+                <div id="shorts-list" class="list-container"></div>
+            </section>
+
+            <!-- New Positions -->
+            <section class="panel new-panel">
+                <h2>🆕 New Whale Positions</h2>
+                <div id="new-positions-list" class="list-container"></div>
+            </section>
+
+            <!-- Notifications -->
+            <section class="panel notify-panel">
+                <h2>📨 Sent Notifications</h2>
+                <div id="notifications-list" class="list-container"></div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

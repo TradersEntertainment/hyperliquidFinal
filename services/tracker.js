@@ -7,7 +7,7 @@ const notifications = require('./notifications');
 const shortAddress = (addr) => `${addr.substring(0, 6)}...${addr.substring(addr.length - 4)}`;
 
 // Process a single position for DANGER tracking
-const processPosition = async (position, user) => {
+const processPosition = async (position, user, triggeringTrade = null) => {
     // Danger Tracking Criteria:
     // - Minimum: $2M (from config)
     // - Distance to Liq: <= 10%

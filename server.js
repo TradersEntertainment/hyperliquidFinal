@@ -3,6 +3,14 @@ const cors = require('cors');
 const config = require('./config');
 const state = require('./state');
 const notifications = require('./services/notifications');
+const websocketService = require('./services/websocket');
+const tracker = require('./services/tracker');
+
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+app.use(express.static('public'));
 
 // ... API Routes (Inlined to avoid file path issues on deployment) ...
 const apiRouter = express.Router();

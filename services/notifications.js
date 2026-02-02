@@ -33,28 +33,12 @@ const formatCurrency = (val) => {
 };
 
 const sendTelegramMessage = async (message, coin = null) => {
-    // Determine which bot to use
-    // Default to main bot for system messages (coin === null) or BTC/ETH
-    const isMain = !coin || ['BTC', 'ETH'].includes(coin);
-
-    if (isMain) {
-        if (!bot || !config.TELEGRAM_CHANNEL_ID) return;
-        try {
-            await bot.sendMessage(config.TELEGRAM_CHANNEL_ID, message, { parse_mode: 'HTML', disable_web_page_preview: true });
-        } catch (error) {
-            console.error('Telegram Main Error:', error.message);
-        }
-    } else {
-        // Altcoin Bot
-        if (!botAlt || !config.TELEGRAM_CHANNEL_ID_ALT) {
-            console.warn('⚠️ Unknown Altcoin Bot or Channel ID. Skipping message.');
-            return;
-        }
-        try {
-            await botAlt.sendMessage(config.TELEGRAM_CHANNEL_ID_ALT, message, { parse_mode: 'HTML', disable_web_page_preview: true });
-        } catch (error) {
-            console.error('Telegram Alt Error:', error.message);
-        }
+    // Send all messages to the main Telegram channel
+    if (!bot || !config.TELEGRAM_CHANNEL_ID) return;
+    try {
+        await bot.sendMessage(config.TELEGRAM_CHANNEL_ID, message, { parse_mode: 'HTML', disable_web_page_preview: true });
+    } catch (error) {
+        console.error('Telegram Error:', error.message);
     }
 };
 

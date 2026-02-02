@@ -32,6 +32,12 @@ const state = {
 const loadState = () => {
     try {
         if (fs.existsSync(DATA_FILE)) {
+            // Check file age
+            const stats = fs.statSync(DATA_FILE);
+            const now = Date.now();
+            const ageMs = now - stats.mtimeMs;
+            const isStale = ageMs > 30 * 60 * 1000; // 30 minutes
+
             const raw = fs.readFileSync(DATA_FILE, 'utf8');
             const data = JSON.parse(raw);
 
@@ -45,10 +51,18 @@ const loadState = () => {
                 state.knownPositions.clear();
                 data.knownPositions.forEach(p => state.knownPositions.set(p[0], p[1]));
             }
-            if (data.trackedPositions) {
-                const validTracked = data.trackedPositions.filter(p => p.user && typeof p.user === 'string' && p.user.length > 10);
-                state.trackedPositions.splice(0, state.trackedPositions.length, ...validTracked);
+
+            // Only load tracked positions if data is fresh
+            if (isStale) {
+                console.log(`⚠️ Data file is ${Math.round(ageMs / 60000)} mins old. Discarding tracked positions to prevent spam.`);
+                state.trackedPositions = []; // Clear incase it had defaults
+            } else {
+                if (data.trackedPositions) {
+                    const validTracked = data.trackedPositions.filter(p => p.user && typeof p.user === 'string' && p.user.length > 10);
+                    state.trackedPositions.splice(0, state.trackedPositions.length, ...validTracked);
+                }
             }
+
             if (data.sentAlerts) {
                 state.sentAlerts.clear();
                 data.sentAlerts.forEach(a => state.sentAlerts.set(a[0], a[1]));

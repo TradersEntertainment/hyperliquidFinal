@@ -141,7 +141,8 @@ const formatTwitterMessage = (baseMsg, position) => {
     // Short Message Construction
     let twitterMsg = `${title}\n`;
     twitterMsg += `💎 Size: ${sizeStr} | ⚡ x${position.leverage}\n`;
-    twitterMsg += `📊 Entry: ${position.entryPrice}\n`;
+    twitterMsg += `� Equity: ${formatCurrency(position.accountEquity)}\n`;
+    twitterMsg += `�📊 Entry: ${position.entryPrice}\n`;
     twitterMsg += `💀 Dist to Liq: ${distStr}\n`;
 
     // Add Link
@@ -205,8 +206,10 @@ ${title}
             let twitterMsg = `${tTitle}\n`;
             twitterMsg += `${emoji} #${position.coin} ${position.direction}\n`;
             twitterMsg += `💎 Size: ${formatCurrency(position.positionUSD)} | ⚡ x${position.leverage}\n`;
+            twitterMsg += `💵 Equity: ${formatCurrency(position.accountEquity)}\n`;
             twitterMsg += `💀 Dist to Liq: ${position.distancePercent}%\n`;
-            twitterMsg += `📊 Entry: ${position.entryPrice}\n`;
+            if (position.liqPrice) twitterMsg += `� Liq Price: ${position.liqPrice}\n`;
+            twitterMsg += `�📊 Entry: ${position.entryPrice}\n`;
 
             // Add PnL if significant
             if (pnlTag) {
@@ -313,6 +316,7 @@ ${desc}
 
 👑 <b>Whale</b>: <code>${position.userShort}</code>
 💎 <b>Size</b>: ${formatCurrency(position.positionUSD)}
+🏦 <b>Equity</b>: ${formatCurrency(position.accountEquity)}
 📊 <b>Entry</b>: ${position.entryPrice}
 🏷️ <b>Mark</b>: ${position.markPrice}
 💰 <b>uPnL</b>: ${formatCurrency(position.unrealizedPnl)}
@@ -342,7 +346,8 @@ ${desc}
         twitterMsg += `${tDesc}\n`;
         twitterMsg += `💰 Profit: ${profitPercent.toFixed(2)}%\n`;
         twitterMsg += `💎 Size: ${formatCurrency(position.positionUSD)}\n`;
-        twitterMsg += `🔗 ${position.hypurrscanUrl}\n`;
+        twitterMsg += `� Equity: ${formatCurrency(position.accountEquity)}\n`;
+        twitterMsg += `�🔗 ${position.hypurrscanUrl}\n`;
         twitterMsg += `#${position.coin} #Inside #Hyperliquid`;
 
         await sendTwitterTweet(twitterMsg);
@@ -375,6 +380,7 @@ ${position.coin} ${position.direction}
 ━━━━━━━━━━━━━━━━
 👑 <b>Whale</b>: <code>${position.userShort}</code>
 💎 <b>Size</b>: ${formatCurrency(position.positionUSD)}
+🏦 <b>Equity</b>: ${formatCurrency(position.accountEquity)}
 ${pnlText}
 
 🔗 <a href="${position.hypurrscanUrl}">View on Hypurrscan</a>

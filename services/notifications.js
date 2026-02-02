@@ -63,13 +63,33 @@ let isProcessingQueue = false;
 
 const processTwitterQueue = async () => {
     if (isProcessingQueue || twitterQueue.length === 0) return;
+
+    // --- Rate Limit & Daily Reset Logic ---
+    const now = Date.now();
+    if (now - state.lastTweetResetTime > 24 * 60 * 60 * 1000) {
+        state.dailyTweetCount = 0;
+        state.lastTweetResetTime = now;
+        state.saveState();
+        console.log('🔄 Twitter Daily Limit Reset!');
+    }
+
+    if (state.dailyTweetCount >= config.TWITTER_DAILY_LIMIT) {
+        console.warn(`🛑 Daily Limit Reached (${state.dailyTweetCount}/${config.TWITTER_DAILY_LIMIT}). Dropping tweet...`);
+        twitterQueue.shift(); // Drop the tweet
+        processTwitterQueue(); // Process next (to drain queue)
+        return;
+    }
+    // --------------------------------------
+
     isProcessingQueue = true;
 
     const text = twitterQueue.shift();
     try {
         if (twitterClient) {
             await twitterClient.v2.tweet(text);
-            console.log('🐦 Tweet sent!');
+            console.log(`🐦 Tweet sent! (${state.dailyTweetCount + 1}/${config.TWITTER_DAILY_LIMIT})`);
+            state.dailyTweetCount++;
+            state.saveState();
         }
     } catch (error) {
         console.error('Twitter Error:', error.code || error.message);
@@ -364,14 +384,15 @@ ${pnlText}
     await sendTelegramMessage(formatTelegramMessage(msg, position), position.coin);
 
     // Twitter
-    if (reason === 'LIQUIDATED' || Math.abs(lastPnl) > 50000) {
-        try {
-            const twitterMsg = formatTwitterMessage(msg, position);
-            await sendTwitterTweet(twitterMsg);
-        } catch (error) {
-            console.error('Twitter Error Details:', error.response ? error.response.data : error.message);
-        }
-    }
+    // REMOVED per user request: "liq closed bildirimlerine gerek yok twitterda"
+    // if (reason === 'LIQUIDATED' || Math.abs(lastPnl) > 50000) {
+    //     try {
+    //         const twitterMsg = formatTwitterMessage(msg, position);
+    //         await sendTwitterTweet(twitterMsg);
+    //     } catch (error) {
+    //         console.error('Twitter Error Details:', error.response ? error.response.data : error.message);
+    //     }
+    // }
 };
 
 module.exports = {

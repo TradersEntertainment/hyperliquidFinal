@@ -26,6 +26,10 @@ const state = {
 
     // Trade Aggregation
     tradeAggregator: new Map(), // key: "user-coin" -> { totalVolume, lastTradeTime, timer }
+
+    // Twitter Limits
+    dailyTweetCount: 0,
+    lastTweetResetTime: Date.now(),
 };
 
 // Load State from Disk
@@ -70,6 +74,10 @@ const loadState = () => {
             if (data.sentNotifications) state.sentNotifications.splice(0, state.sentNotifications.length, ...data.sentNotifications);
             if (data.recentNewPositions) state.recentNewPositions.splice(0, state.recentNewPositions.length, ...data.recentNewPositions);
 
+            // Restore Twitter State
+            if (data.dailyTweetCount !== undefined) state.dailyTweetCount = data.dailyTweetCount;
+            if (data.lastTweetResetTime) state.lastTweetResetTime = data.lastTweetResetTime;
+
             state.isInitialLoad = false; // If loaded, not initial
             console.log('💾 State loaded from disk.');
         }
@@ -87,7 +95,11 @@ const saveState = () => {
             trackedPositions: state.trackedPositions,
             sentAlerts: Array.from(state.sentAlerts.entries()),
             sentNotifications: state.sentNotifications,
-            recentNewPositions: state.recentNewPositions
+            sentNotifications: state.sentNotifications,
+            recentNewPositions: state.recentNewPositions,
+            // Save Twitter State
+            dailyTweetCount: state.dailyTweetCount,
+            lastTweetResetTime: state.lastTweetResetTime
         };
         fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
         // console.log('💾 State saved.');

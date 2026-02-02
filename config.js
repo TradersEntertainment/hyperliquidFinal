@@ -18,5 +18,6 @@ module.exports = {
     TWITTER_API_SECRET: process.env.TWITTER_API_SECRET,
     TWITTER_ACCESS_TOKEN: process.env.TWITTER_ACCESS_TOKEN,
     TWITTER_ACCESS_SECRET: process.env.TWITTER_ACCESS_SECRET,
+    TWITTER_DAILY_LIMIT: process.env.TWITTER_DAILY_LIMIT || 20, // Strict Daily Limit
     DATABASE_URL: process.env.DATABASE_URL
 };

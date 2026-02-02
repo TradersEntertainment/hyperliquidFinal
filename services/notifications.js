@@ -280,7 +280,26 @@ ${desc}
 
     // Twitter
     try {
-        const twitterMsg = formatTwitterMessage(msg, position);
+        // Custom message for Insider to include specific details (Profit, Context)
+        const emoji = position.direction === 'LONG' ? '🟢' : '🔴';
+
+        let tTitle = '🚨 INSIDER DETECTED 🚨';
+        let tDesc = `⚠️ ${action} before ${dumpPump}`;
+
+        if (isTakingProfit) {
+            const fromDir = position.direction === 'LONG' ? 'LONGS' : 'SHORTS';
+            tTitle = `💰 INSIDER PROFIT 💰`;
+            tDesc = `⚠️ Taking Profit from ${fromDir}`;
+        }
+
+        let twitterMsg = `${tTitle}\n`;
+        twitterMsg += `${emoji} #${position.coin} ${position.direction}\n`;
+        twitterMsg += `${tDesc}\n`;
+        twitterMsg += `💰 Profit: ${profitPercent.toFixed(2)}%\n`;
+        twitterMsg += `💎 Size: ${formatCurrency(position.positionUSD)}\n`;
+        twitterMsg += `🔗 ${position.hypurrscanUrl}\n`;
+        twitterMsg += `#${position.coin} #Inside #Hyperliquid`;
+
         await sendTwitterTweet(twitterMsg);
     } catch (error) {
         console.error('Twitter Error Details:', error.response ? error.response.data : error.message);

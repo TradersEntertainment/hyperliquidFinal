@@ -174,8 +174,33 @@ ${title}
     // UPDATE: User requested to remove initial "Danger" alerts from Twitter to save rate limits.
     // We only send if it is RECURRING (Risk Increasing) or has a PnL Tag (Smart Whale/Bag Holder).
     if (position.isRecurring || pnlTag) {
-        const twitterMsg = formatTwitterMessage(msg, position);
-        await sendTwitterTweet(twitterMsg);
+        try {
+            // Custom Compact Message for Danger/Risk
+            let tTitle = `⚠️ ${position.coin} ${position.direction} 💀`;
+            if (position.isRecurring) {
+                tTitle = `📉 RISK INCREASING 💀`;
+            }
+
+            // Compact Construction
+            let twitterMsg = `${tTitle}\n`;
+            twitterMsg += `${emoji} #${position.coin} ${position.direction}\n`;
+            twitterMsg += `💎 Size: ${formatCurrency(position.positionUSD)} | ⚡ x${position.leverage}\n`;
+            twitterMsg += `💀 Dist to Liq: ${position.distancePercent}%\n`;
+            twitterMsg += `📊 Entry: ${position.entryPrice}\n`;
+
+            // Add PnL if significant
+            if (pnlTag) {
+                const pnlStr = pnl >= 0 ? `+$${formatCurrency(pnl)}` : `-$${formatCurrency(Math.abs(pnl))}`;
+                twitterMsg += `💰 PnL: ${pnlStr}\n`;
+            }
+
+            twitterMsg += `🔗 ${position.hypurrscanUrl}\n`;
+            twitterMsg += `#${position.coin} #Whale #Hyperliquid`;
+
+            await sendTwitterTweet(twitterMsg);
+        } catch (error) {
+            console.error('Twitter Error Details:', error.response ? error.response.data : error.message);
+        }
     }
 
     state.sentNotifications.unshift({

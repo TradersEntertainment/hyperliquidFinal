@@ -327,7 +327,12 @@ ${desc}
 
         await sendTwitterTweet(twitterMsg);
     } catch (error) {
-        console.error('Twitter Error Details:', error.response ? error.response.data : error.message);
+        if (error.response && error.response.status === 403) {
+            console.error('❌ Twitter 403 FORBIDDEN: Please check your API Keys. Ensure "Read and Write" permissions are enabled in Twitter Developer Portal.');
+            console.error('ℹ️ You may need to regenerate your Access Token & Secret after changing permissions.');
+        } else {
+            console.error('Twitter Error Details:', error.response ? error.response.data : error.message);
+        }
     }
 
     state.sentNotifications.unshift({

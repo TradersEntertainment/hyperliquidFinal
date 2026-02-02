@@ -60,6 +60,7 @@ const postRequest = (type, payload = {}) => {
 };
 
 const getUserState = async (user) => {
+    if (!user || typeof user !== 'string' || user.length < 10) return null;
     return await postRequest('clearinghouseState', { user });
 };
 

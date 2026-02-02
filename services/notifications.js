@@ -108,22 +108,27 @@ const formatTelegramMessage = (baseMsg, position) => {
 };
 
 const formatTwitterMessage = (baseMsg, position) => {
-    // 1. Strip HTML
-    let twitterMsg = baseMsg.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ');
+    // Construct a COMPACT message specifically for Twitter (Max 280 chars)
 
-    // 2. Replace "View on Hypurrscan" with the actual Link
-    twitterMsg = twitterMsg.replace('View on Hypurrscan', position.hypurrscanUrl);
+    // Title
+    const emoji = position.direction === 'LONG' ? '🟢' : '🔴';
+    let title = `${emoji} #${position.coin} ${position.direction}`;
 
-    // 3. Add "Hyperliquid." text
-    twitterMsg += `\nHyperliquid.`;
+    // Compact Details
+    const sizeStr = formatCurrency(position.positionUSD);
+    const distStr = position.distancePercent ? `${position.distancePercent}%` : 'N/A';
 
-    // 4. Add Hashtags
-    twitterMsg += `\n#${position.coin} #Whale #Hyperliquid`;
+    // Short Message Construction
+    let twitterMsg = `${title}\n`;
+    twitterMsg += `💎 Size: ${sizeStr} | ⚡ x${position.leverage}\n`;
+    twitterMsg += `📊 Entry: ${position.entryPrice}\n`;
+    twitterMsg += `💀 Dist to Liq: ${distStr}\n`;
 
-    // 5. (Link already added above)
+    // Add Link
+    twitterMsg += `\n${position.hypurrscanUrl}`;
 
-    // 6. Add Time (to prevent duplicate tweet errors)
-    twitterMsg += `\n🕒 ${new Date().toLocaleTimeString()}`;
+    // Add Time (Short) to prevent duplicates
+    twitterMsg += `\n🕒 ${new Date().toLocaleTimeString('en-US', { hour12: false })}`;
 
     return twitterMsg;
 };

@@ -33,13 +33,27 @@ const formatCurrency = (val) => {
 };
 
 const sendTelegramMessage = async (message, coin = null) => {
-    // Send all messages to the main Telegram channel
-    if (!bot || !config.TELEGRAM_CHANNEL_ID) return;
-    try {
-        await bot.sendMessage(config.TELEGRAM_CHANNEL_ID, message, { parse_mode: 'HTML', disable_web_page_preview: true });
-    } catch (error) {
-        console.error('Telegram Error:', error.message);
+    const promises = [];
+
+    // 1. Send to Main Channel (Always)
+    if (bot && config.TELEGRAM_CHANNEL_ID) {
+        promises.push(
+            bot.sendMessage(config.TELEGRAM_CHANNEL_ID, message, { parse_mode: 'HTML', disable_web_page_preview: true })
+                .catch(err => console.error('Telegram Main Error:', err.message))
+        );
     }
+
+    // 2. Send to Altcoin Channel (If applicable)
+    // We consider everything except BTC and ETH as an "Altcoin" for this purpose (including SOL, BNB, etc.)
+    const isMajor = ['BTC', 'ETH'].includes(coin);
+    if (botAlt && config.TELEGRAM_CHANNEL_ID_ALT && coin && !isMajor) {
+        promises.push(
+            botAlt.sendMessage(config.TELEGRAM_CHANNEL_ID_ALT, message, { parse_mode: 'HTML', disable_web_page_preview: true })
+                .catch(err => console.error('Telegram Alt Error:', err.message))
+        );
+    }
+
+    await Promise.all(promises);
 };
 
 const twitterQueue = [];
@@ -176,24 +190,27 @@ ${title}
 
     // Twitter
     // Only Tweet if VERY urgent (< 10% distance) or Significant PnL (Bag Holder/Smart Whale)
-    // UPDATE: User requested to remove initial "Danger" alerts from Twitter to save rate limits.
-    // We only send if it is RECURRING (Risk Increasing) or has a PnL Tag (Smart Whale/Bag Holder).
+    // OR if Recurring (Risk Increasing)
     if (position.isRecurring || pnlTag) {
         try {
             // Custom Compact Message for Danger/Risk
-            let tTitle = `⚠️ ${position.coin} ${position.direction} 💀`;
+            let tTitle = `📡 JUST CAUGHT ON RADAR 📡`;
             if (position.isRecurring) {
                 tTitle = `📉 RISK INCREASING 💀`;
             }
 
-            // Compact Construction
-            let twitterMsg = `${tTitle}\n`;
-            twitterMsg += `${emoji} #${position.coin} ${position.direction}\n`;
-            twitterMsg += `💎 Size: ${formatCurrency(position.positionUSD)} | ⚡ x${position.leverage}\n`;
+            // Compact Header for Twitter
+            // $67M #BTC SHORT (1% to Liq)
+            let tHeader = `${emoji} ${sizeStr} #${position.coin} ${position.direction} (${position.distancePercent}% to Liq)`;
+
+            let twitterMsg = `${tHeader}\n`;
+            twitterMsg += `${tTitle}\n`;
+            twitterMsg += `💎 Size: ${sizeStr} | ⚡ x${position.leverage}\n`;
             twitterMsg += `💵 Equity: ${formatCurrency(position.accountEquity)}\n`;
-            twitterMsg += `💀 Dist to Liq: ${position.distancePercent}%\n`;
-            if (position.liqPrice) twitterMsg += `� Liq Price: ${position.liqPrice}\n`;
-            twitterMsg += `�📊 Entry: ${position.entryPrice}\n`;
+
+            // Removed separate "Dist to Liq" line for Twitter as well since it's in header
+            if (position.liqPrice) twitterMsg += `💀 Liq Price: ${position.liqPrice}\n`;
+            twitterMsg += `📊 Entry: ${position.entryPrice}\n`;
 
             // Add PnL if significant
             if (pnlTag) {

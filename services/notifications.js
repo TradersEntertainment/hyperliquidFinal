@@ -205,9 +205,15 @@ ${title}
             let tHeader = `${emoji} ${sizeStr} #${position.coin} ${position.direction} (${position.distancePercent}% to Liq)`;
 
             if (position.isRecurring) {
-                // Combined Format for Recurring: 📉 RISK INCREASING: 🟢 $67M BTC LONG (1% to Liq) 💀
+                // Combined Format for Recurring: 📉 RISK INCREASING FOR: $67M BTC LONG 🟢 (1% to Liq) 💀💀
                 tTitle = ''; // Clear separate title
-                tHeader = `📉 RISK INCREASING: ${emoji} ${sizeStr} #${position.coin} ${position.direction} (${position.distancePercent}% to Liq) 💀`;
+
+                // Dynamic Skulls
+                let skulls = '💀';
+                if (position.positionUSD >= 30000000) skulls = '💀💀💀💀💀';
+                else if (position.positionUSD >= 10000000) skulls = '💀💀';
+
+                tHeader = `📉 RISK INCREASING FOR: ${sizeStr} #${position.coin} ${position.direction} ${emoji} (${position.distancePercent}% to Liq) ${skulls}`;
             }
 
             let twitterMsg = `${tHeader}\n`;

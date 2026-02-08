@@ -192,19 +192,27 @@ ${title}
     // Only Tweet if VERY urgent (< 10% distance) or Significant PnL (Bag Holder/Smart Whale)
     // OR if Recurring (Risk Increasing)
     if (position.isRecurring || pnlTag) {
+        // Filter: Dont spam Twitter with small BTC/ETH recurring updates (Min 5M)
+        if (['BTC', 'ETH'].includes(position.coin) && position.positionUSD < 5000000) {
+            return;
+        }
+
         try {
             // Custom Compact Message for Danger/Risk
             let tTitle = `📡 JUST CAUGHT ON RADAR 📡`;
-            if (position.isRecurring) {
-                tTitle = `📉 RISK INCREASING 💀`;
-            }
-
             // Compact Header for Twitter
             // $67M #BTC SHORT (1% to Liq)
             let tHeader = `${emoji} ${sizeStr} #${position.coin} ${position.direction} (${position.distancePercent}% to Liq)`;
 
+            if (position.isRecurring) {
+                // Combined Format for Recurring: 📉 RISK INCREASING: 🟢 $67M BTC LONG (1% to Liq) 💀
+                tTitle = ''; // Clear separate title
+                tHeader = `📉 RISK INCREASING: ${emoji} ${sizeStr} #${position.coin} ${position.direction} (${position.distancePercent}% to Liq) 💀`;
+            }
+
             let twitterMsg = `${tHeader}\n`;
-            twitterMsg += `${tTitle}\n`;
+            if (tTitle) twitterMsg += `${tTitle}\n`;
+
             twitterMsg += `💎 Size: ${sizeStr} | ⚡ x${position.leverage}\n`;
             twitterMsg += `💵 Equity: ${formatCurrency(position.accountEquity)}\n`;
 

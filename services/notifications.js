@@ -139,15 +139,12 @@ const formatTwitterMessage = (baseMsg, position) => {
     // Short Message Construction
     let twitterMsg = `${title}\n`;
     twitterMsg += `💎 Size: ${sizeStr} | ⚡ x${position.leverage}\n`;
-    twitterMsg += `� Equity: ${formatCurrency(position.accountEquity)}\n`;
-    twitterMsg += `�📊 Entry: ${position.entryPrice}\n`;
+    twitterMsg += `💵 Equity: ${formatCurrency(position.accountEquity)}\n`;
+    twitterMsg += `📊 Entry: ${position.entryPrice}\n`;
     twitterMsg += `💀 Dist to Liq: ${distStr}\n`;
 
     // Add Link
     twitterMsg += `\n${position.hypurrscanUrl}`;
-
-    // Add Time (Short) to prevent duplicates
-    twitterMsg += `\n🕒 ${new Date().toLocaleTimeString('en-US', { hour12: false })}`;
 
     return twitterMsg;
 };
@@ -362,8 +359,8 @@ ${desc}
         twitterMsg += `${tDesc}\n`;
         twitterMsg += `💰 Profit: ${profitPercent.toFixed(2)}%\n`;
         twitterMsg += `💎 Size: ${formatCurrency(position.positionUSD)}\n`;
-        twitterMsg += `� Equity: ${formatCurrency(position.accountEquity)}\n`;
-        twitterMsg += `�🔗 ${position.hypurrscanUrl}\n`;
+        twitterMsg += `💵 Equity: ${formatCurrency(position.accountEquity)}\n`;
+        twitterMsg += `🔗 ${position.hypurrscanUrl}\n`;
         twitterMsg += `#${position.coin} #Inside #Hyperliquid`;
 
         await sendTwitterTweet(twitterMsg);

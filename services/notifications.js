@@ -191,9 +191,10 @@ ${title}
     // Twitter
     // Only Tweet if VERY urgent (< 10% distance) or Significant PnL (Bag Holder/Smart Whale)
     // OR if Recurring (Risk Increasing)
+    const sizeStr = formatCurrency(position.positionUSD);
     if (position.isRecurring || pnlTag) {
-        // Filter: Dont spam Twitter with small BTC/ETH recurring updates (Min 5M)
-        if (['BTC', 'ETH'].includes(position.coin) && position.positionUSD < 5000000) {
+        // Filter: Dont spam Twitter with small BTC/ETH recurring updates (Min 3M)
+        if (['BTC', 'ETH'].includes(position.coin) && position.positionUSD < 3000000) {
             return;
         }
 

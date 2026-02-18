@@ -18,12 +18,19 @@ if (config.TELEGRAM_BOT_TOKEN_ALT) {
 // Initialize Twitter
 let twitterClient = null;
 if (config.TWITTER_API_KEY && config.TWITTER_API_SECRET && config.TWITTER_ACCESS_TOKEN && config.TWITTER_ACCESS_SECRET) {
-    twitterClient = new TwitterApi({
-        appKey: config.TWITTER_API_KEY,
-        appSecret: config.TWITTER_API_SECRET,
-        accessToken: config.TWITTER_ACCESS_TOKEN,
-        accessSecret: config.TWITTER_ACCESS_SECRET,
-    });
+    try {
+        twitterClient = new TwitterApi({
+            appKey: config.TWITTER_API_KEY,
+            appSecret: config.TWITTER_API_SECRET,
+            accessToken: config.TWITTER_ACCESS_TOKEN,
+            accessSecret: config.TWITTER_ACCESS_SECRET,
+        });
+        console.log('✅ Twitter Client Initialized Successfully');
+    } catch (err) {
+        console.error('❌ Failed to Initialize Twitter Client:', err.message);
+    }
+} else {
+    console.warn('⚠️ Twitter API Keys missing in config. Twitter notifications disabled.');
 }
 
 const formatCurrency = (val) => {
@@ -60,60 +67,75 @@ const twitterQueue = [];
 let isProcessingQueue = false;
 
 const processTwitterQueue = async () => {
-    if (isProcessingQueue || twitterQueue.length === 0) return;
+    if (isProcessingQueue) {
+        // console.log('⏳ Queue is busy, waiting...');
+        return;
+    }
+
+    if (twitterQueue.length === 0) return;
 
     // --- Rate Limit & Daily Reset Logic ---
     const now = Date.now();
     if (now - state.lastTweetResetTime > 24 * 60 * 60 * 1000) {
+        console.log(`🔄 Resetting Daily Tweet Count (Old: ${state.dailyTweetCount})`);
         state.dailyTweetCount = 0;
         state.lastTweetResetTime = now;
         state.saveState();
-        console.log('🔄 Twitter Daily Limit Reset!');
     }
 
     if (state.dailyTweetCount >= config.TWITTER_DAILY_LIMIT) {
-        console.warn(`🛑 Daily Limit Reached (${state.dailyTweetCount}/${config.TWITTER_DAILY_LIMIT}). Dropping tweet...`);
-        twitterQueue.shift(); // Drop the tweet
-        processTwitterQueue(); // Process next (to drain queue)
+        console.warn(`🛑 Twitter Daily Limit Reached (${state.dailyTweetCount}/${config.TWITTER_DAILY_LIMIT}). Dropping tweet...`);
+        // Remove the dropped tweet from queue so we don't get stuck
+        twitterQueue.shift();
+        // Try next one immediately (recursion with safety check handled by queue length)
+        processTwitterQueue();
         return;
     }
     // --------------------------------------
 
     isProcessingQueue = true;
-
     const text = twitterQueue.shift();
+
+    console.log(`🚀 Attempting to send tweet... (Queue: ${twitterQueue.length}, Daily: ${state.dailyTweetCount})`);
+
     try {
         if (twitterClient) {
             await twitterClient.v2.tweet(text);
-            console.log(`🐦 Tweet sent! (${state.dailyTweetCount + 1}/${config.TWITTER_DAILY_LIMIT})`);
             state.dailyTweetCount++;
             state.saveState();
+            console.log(`✅ Tweet sent! (${state.dailyTweetCount}/${config.TWITTER_DAILY_LIMIT})`);
+        } else {
+            console.error('❌ Twitter Client is NULL! Check API Keys in .env');
         }
     } catch (error) {
-        console.error('Twitter Error:', error.code || error.message);
-        if (error.data) console.error('Twitter Error Data:', JSON.stringify(error.data, null, 2));
+        console.error('❌ Twitter Error:', error.code || error.message);
+        if (error.data) console.error('Error Data:', JSON.stringify(error.data, null, 2));
 
         // If Rate Limit (429), pause for 15 mins
         if (error.code === 429 || error.status === 429) {
-            console.log('⏳ Twitter Rate Limit hit. Pausing queue for 15 mins...');
-            twitterQueue.unshift(text); // Put back
+            console.log('⏳ Twitter Rate Limit hit in API. Pausing queue for 15 mins...');
+            twitterQueue.unshift(text); // Put back to retry
             setTimeout(() => {
                 isProcessingQueue = false;
                 processTwitterQueue();
             }, 15 * 60 * 1000);
-            return;
+            return; // Exit, timeout will restart
         }
     }
 
-    // Wait 2 minutes before next tweet to be safe
+    // Wait 30 seconds before next tweet to be safe and avoid rapid-fire bans
     setTimeout(() => {
         isProcessingQueue = false;
         processTwitterQueue();
-    }, 120000);
+    }, 30000);
 };
 
 const sendTwitterTweet = async (text) => {
-    if (!twitterClient) return;
+    if (!twitterClient) {
+        console.warn('⚠️ Cannot queue tweet: Twitter Client is not initialized.');
+        return;
+    }
+    console.log('➕ Adding tweet to queue:', text.split('\n')[0] + '...');
     twitterQueue.push(text);
     processTwitterQueue();
 };
@@ -222,7 +244,7 @@ ${title}
             twitterMsg += `💵 Equity: ${formatCurrency(position.accountEquity)}\n`;
 
             // Removed separate "Dist to Liq" line for Twitter as well since it's in header
-            if (position.liqPrice) twitterMsg += `💀 Liq Price: ${position.liqPrice}\n`;
+            if (position.liqPrice) twitterMsg += `💀 Liq Price: ${parseFloat(position.liqPrice).toFixed(2)}\n`;
             twitterMsg += `📊 Entry: ${position.entryPrice}\n`;
 
             // Add PnL if significant

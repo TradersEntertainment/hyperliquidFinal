@@ -1,0 +1,15 @@
+
+TWEET CONTENT:
+📉 RISK INCREASING FOR: $28.18M #BTC SHORT 🔴 (1.65% to Liq) 💀💀
+💎 Size: $28.18M | ⚡ x40
+💵 Equity: $823.2K
+💀 Liq Price: 69198.4198582894
+📊 Entry: 68079.5
+🔗 https://hypurrscan.io/address/0xec32...ae82
+#BTC #Whale #Hyperliquid
+
+LENGTH ANALYSIS:
+Raw Length: 230
+Twitter Adjusted Length (Approx): 210
+Limit: 280
+Pass: YES
